@@ -1,0 +1,23 @@
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+coin:
+  app:
+    jwtCookieName: coin-jwt
+    jwtRefreshCookieName: coin-jwt-refresh
+    jwtSecret: ${JWT_SECRET}
+    jwtExpirationMs: ${JWT_EXPIRATION_MS}
+    jwtRefreshExpirationMs: ${JWT_REFRESH_EXPIRATION_MS}
+
+springdoc:
+  api-docs:
+    path: ${SWAGGER_API_DOCS_PATH}
+  swagger-ui:
+    path: ${SWAGGER_UI_PATH}
+    operationsSorter: ${SWAGGER_OPERATIONS_SORTER}
+    tagsSorter: ${SWAGGER_TAGS_SORTER}

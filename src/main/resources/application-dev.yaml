@@ -1,0 +1,34 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coin001
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: Asia/Ho_Chi_Minh
+
+coin:
+  app:
+    jwtCookieName: coin-jwt
+    jwtRefreshCookieName: coin-jwt-refresh
+    jwtSecret: 1c4e9676c4fb52381bac0b849320e2fbd92ef2e3ccf42c8938900d51598d91f7
+    jwtExpirationMs: 900000
+    jwtRefreshExpirationMs: 604800000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
